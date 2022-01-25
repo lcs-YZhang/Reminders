@@ -8,10 +8,18 @@
 import Foundation
 
 class TaskStore: ObservableObject {
+    
+    //MARK: Stored Properties
     @Published var tasks: [Task]
     
+    //MARK: Initalizers
     init(tasks: [Task] = []) {
         self.tasks = tasks
+    }
+    
+    //MARK: Functions
+    func deleteItems(at offsets: IndexSet) {
+        tasks.remove(atOffsets: offsets)
     }
 }
 
